@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { dataFake } from '../../data/dataFake';
 
 @Component({
   selector: 'app-content',
@@ -7,14 +9,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentComponent implements OnInit {
 
-  photoCover: string = "https://classic.exame.com/wp-content/uploads/2021/07/WhatsApp-Image-2021-07-22-at-12.49.27.jpeg?quality=70&strip=info&w=1024"
-  contentTitle: string = "Empresas de tecnologia dominam IPOs"
-  contentDescription: string = "Com estreia da Multilaser nesta quinta, o número de empresas do setor na bolsa já é maior do que o de bancos."
+  photoCover: string = ""
+  contentTitle: string = ""
+  contentDescription: string = ""
+  private id: string | null = "0"
 
-  constructor() {}
+  constructor(
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
+    this.route.paramMap.subscribe( value => 
+      this.id = value.get('id')
+    )
+
+    this.setValueToComponent(this.id)
+  }
+
+  setValueToComponent(id: string | null){
+    const result = dataFake.filter( article => article.id === id)[0]
     
+    if(result) {
+      this.photoCover = result.photoCover
+      this.contentTitle = result.title
+      this.contentDescription = result.description
+    }
+
   }
 
 }

@@ -3,6 +3,7 @@
 <div class="container__articles">
     <div class="articles__main">
         <app-big-card
+        [id]="'1'"
         [photoCover]="'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZOlOlghH7T1Im4_LQ4kkqUWY0mBCDqKxqh2i51TZO4KmKFaCONvMl1NNQ5PBSBbSrX1c&usqp=CAU'"
         [cardTitle]="'Bolsa de Valores tem a segunda alta seguida'"
         [cardDescription]="'Eu nunca mais boto a boca num copo de cachaça, agora eu só uso canudis! '
@@ -12,14 +13,17 @@
     </div>
     <div class="articles__others">
         <app-small-card
+            [id]="'2'"
             [photoCover]="'https://assets-blog.pagseguro.uol.com.br/wp-content/2023/05/bolsa-de-valores-min.jpg'"
             [cardTitle]="'O Guia completo para você começar a investir!'"
         ></app-small-card>
         <app-small-card
+            [id]="'3'"
             [photoCover]="'https://conteudo.imguol.com.br/c/noticias/71/2018/09/14/nota-de-cem-dolares-com-grafico-do-mercado-de-acoes-1536937489484_v2_4x3.jpg'"
             [cardTitle]="'Alta do Dólar tem impacto no Brasil. Saiba mais!'"
         ></app-small-card>
         <app-small-card
+            [id]="'4'"
             [photoCover]="'https://media.seudinheiro.com/uploads/2023/06/Petrobras-PETR3-PETR4-fachada-715x402.jpg'"
             [cardTitle]="'Petrobras (PETR3) tem segunda alta seguida. Entenda sobre!'"
         ></app-small-card>
